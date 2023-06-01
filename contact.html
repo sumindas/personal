@@ -72,37 +72,42 @@
                           Send Message Us
                         </h5>
                       </div>
-                      <div>
-                        <form action="https://script.google.com/macros/s/AKfycbyFAuNNtehuk18wozyRLpmV0L5nQvq3bN_Z_-lA26Sqo-X1hn2kcQz6hrirxIwFkLPpHw/exec" method="POST" onsubmit="return validateform()" role="form" id="myform">
+                      <div class="container" id="formcontainer">
+                        <form id="myform" onsubmit="return checkInputs()" action="https://script.google.com/macros/s/AKfycbyFAuNNtehuk18wozyRLpmV0L5nQvq3bN_Z_-lA26Sqo-X1hn2kcQz6hrirxIwFkLPpHw/exec" method="POST">
                           <div class="row">
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                              </div>
+                            <div class="col-25">
+                              <label for="fname">First Name</label>
                             </div>
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                              </div>
+                            <div class="col-75">
+                              <input type="text" id="fname" name="firstname" placeholder="Your name..">
                             </div>
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="email">Email</label>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                              </div>
+                            <div class="col-75">
+                              <input type="email" class="ps-3" id="emailid" name="email" placeholder="Your email.." >
                             </div>
-                            <div class="col-md-12 text-center my-3">
-                              <div class="loading">Loading</div>
-                              <div class="error-message"></div>
-                              <div class="sent-message">Your message has been sent. Thank you!</div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="mobno">Mobile</label>
                             </div>
-                            <div class="col-md-12 text-center">
-                              <button type="submit" onclick="validateform()" class="button button-a button-big button-rouded">Send Message</button>
+                            <div class="col-75">
+                              <input type="tel" class="ps-3" id="mobile" name="mobileno" placeholder="Your mobile..">
                             </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="subject">Subject</label>
+                            </div>
+                            <div class="col-75">
+                              <textarea id="subject" name="Message" placeholder="Write something.." style="height:200px"></textarea>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <input type="submit" value="Submit">
                           </div>
                         </form>
                       </div>
@@ -160,25 +165,6 @@
     </div>
   </footer><!-- End  Footer -->
 
-
-  <!-- script for form validation -->
-<script>
-  function validateform(){  
-    var name=document.myform.name.value;  
-    var password=document.myform.password.value;  
-  
-      if (name==null || name==""){  
-          alert("Name can't be blank");  
-            return false;  
-        }else if(password.length<6){  
-        alert("Password must be at least 6 characters long.");  
-       return false;  
-  }  
-}  
-</script>
-
-<!-- End form validate -->
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -189,6 +175,7 @@
 
   <!-- Template Main JS File -->
 
+  <script src="validate.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>
